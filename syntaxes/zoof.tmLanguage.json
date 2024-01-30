@@ -1,0 +1,71 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Zoof",
+	"patterns": [
+		{
+			"include": "#keyword"
+		},
+		{
+			"include": "#number"
+		},
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#string"
+		},
+		{
+			"include": "#constant"
+		}
+	],
+	"repository": {
+		"keyword": {
+			"patterns": [
+				{
+					"name": "keyword.control.zoof",
+					"match": "\\b(import|from|as|abstract|trait|struct|impl|func|getter|setter|method|return|if|elif|elseif|else|then|for|in|while|do|its|break|continue|proc)\\b"
+				},
+				{
+					"name": "keyword.operator",
+					"match": "\\b(and|or|not)\\b"
+				}
+			]
+		},
+		"constant": {
+			"patterns": [
+				{
+					"name": "constant.other",
+					"match": "\\b(true|false|nil)\\b"
+				},
+				{
+					"name": "constant.numeric.zoof",
+					"match": "\\b(\\d+)\\b"
+				}
+			]
+		},
+		"comment": {
+			"patterns": [
+				{
+					"name": "comment.line.number-sign.zoof",
+					"begin": "#",
+					"end": "\\n"
+				},
+				{
+					"comment": "snippet output is shown as comment - does not work for some reason",
+					"name": "comment.block.documentation.zoof",
+					"begin": "####\\soutput",
+					"end": "####\\send"
+				}
+			]
+		},
+		"string": {
+			"patterns": [
+				{
+					"name": "string.quoted.single.zoof",
+					"match": "'.*'"
+				}
+			]
+		}
+	},
+	"scopeName": "source.zoof"
+}

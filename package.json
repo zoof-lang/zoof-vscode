@@ -1,0 +1,52 @@
+{
+  "name": "zoof",
+  "displayName": "Zoof",
+  "description": "Zoof language support",
+  "publisher": "ZoofLang",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension",
+  "contributes": {
+    "languages": [
+      {
+        "id": "zoof",
+        "aliases": [
+          "Zoof",
+          "zoof"
+        ],
+        "extensions": [
+          ".zf"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "zoof",
+        "scopeName": "source.zoof",
+        "path": "./syntaxes/zoof.tmLanguage.json"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -b",
+    "watch": "tsc -b -w"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^8.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/vscode": "^1.77.0",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  }
+}
